@@ -1,0 +1,2 @@
+# k8s-manifests
+argocdで使うmanifestsファイルを管理するリポジトリ
