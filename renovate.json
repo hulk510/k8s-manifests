@@ -1,0 +1,17 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:best-practices",
+    ":disableRateLimiting",
+    ":disablePrControls",
+    ":automergeAll",
+    ":automergeBranch",
+    "helpers:pinGitHubActionDigests"
+  ],
+  "ignoreTests": true,
+  "automergeStrategy": "squash",
+  "assignAutomerge": true,
+  "kubernetes": {
+    "fileMatch": ["\\.yaml$"]
+  }
+}
