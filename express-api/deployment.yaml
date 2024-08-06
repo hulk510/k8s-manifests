@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: express-api-deployment
+  namespace: haruka
+  labels:
+    app: express-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: express-api
+  template:
+    metadata:
+      labels:
+        app: express-api
+    spec:
+      containers:
+        - name: express-api
+          image: ghcr.io/hulk510/playground:main@sha256:74be6865a81cb1a504472e55165d3d7967fe80ed5b6bd4a5f3dd20f5faf818d7
+          ports:
+            - containerPort: 8888

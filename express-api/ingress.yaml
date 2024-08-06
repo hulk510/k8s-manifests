@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: express-app-ingress
+  namespace: haruka
+spec:
+  rules:
+    - host: api.haruka.dad
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: express-api-service
+                port:
+                  number: 80
